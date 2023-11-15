@@ -1,0 +1,43 @@
+<%-include('header')-%>
+
+<!-- <div class="text-center center-div mt-5" id="login">
+  <div class="container w-25 border py-5 mt-5">
+     <h3>Welcome to Express Dashboard</h3>
+     <h5><%=locals.user?user:"User"%></h5>
+     <a href="/route/logout">logout</a>
+  </div>
+</div> -->
+
+<nav class="navbar fixed-top navbar-light bg-dark">
+  <div class="container-fluid">
+    <div class="row">
+    <a class="navbar-brand text-center text-light" href="#">HOME</a>
+  </div>
+  <h4 class="text-light">Best players</h4>
+  <div class="btn btn-primary"><a id="okda" class="text-light" href="/route/logout">LogOut</a></div>
+</div>
+</nav>
+<div class="container ">
+  <div class="row ">
+    <% products.forEach(function(product){ %>
+      <div class="col-4 pt-5">
+    <div class="card" style="width: 18rem;">
+      <img src="<%= product.src %>"class="card-img-top" alt="..." height="172">
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name%></h5>
+        <p class="card-text">Age-<%= product.age%></p>
+        <p class="card-text">Country-<%= product.country%></p>
+        <p class="card-text">Club<%= product.club%></p>
+        <p class="card-text">Goals<%= product.goals%></p>
+        
+      </div>
+    </div>
+  </div>
+    <% }); %>
+  </div>
+</div>
+
+
+
+
+<%-include('footer')-%>
